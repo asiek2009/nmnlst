@@ -1,0 +1,80 @@
+.menu     
+    margin: auto
+    padding: 50px 0 0
+    width: fit-content
+    height: calc(20vh - 50px)
+    ul
+        list-style-type: none
+        padding: 0
+        display: flex
+        gap: 40px
+        text-transform: uppercase
+        margin: 3px                        
+                
+.hamburger-menu
+    position: absolute
+    width: 0
+    height: 100%
+    top: 0
+    right: 0
+    z-index: -1
+    overflow: hidden
+    transition-duration: .4s
+    &.active        
+        z-index: 99
+        width: 100%
+    &_box
+        position: absolute
+        top: 0
+        width: 30%
+        background-color: #fff
+        height: 100%
+        z-index: 999
+        right: -40%
+        padding: 20px
+        transition-duration: .6s
+        &_container
+            position: relative
+            top: 50%
+            transform: translateY(-50%)
+            ul
+                list-style-type: none
+                margin: 0
+                padding: 0
+                li
+                    font-size: 25px
+                    padding: 10px 0
+                    text-align: center
+        &.active
+            right: 0
+        &_close-button
+            height: 25px
+            display: block
+            margin-left: auto
+            cursor: pointer
+            position: relative
+            top: 30px
+            right: 2px
+                
+.menu,
+.hamburger-menu
+    li
+        cursor: pointer
+        position: relative
+        &::after
+            position: absolute
+            background-color: #e6ba38
+            height: 0
+            width: 0
+            content: ''
+            display: block
+            top: 50%
+            left: 50%
+            transform: translate3d(-50% ,-50%, 0)
+            z-index: -1
+            border-radius: 50%
+            transition-duration: .4s
+        &:hover::after
+            height: 40px
+            width: 40px
+                    
